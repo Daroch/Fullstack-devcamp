@@ -3,3 +3,17 @@
     grid-template-columns: 1fr 1fr;
     background-color: #F7F7F7
 }
+
+.gridTwo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+.gridTwo > .column1 {
+    background-color: blue;
+}
+.gridTwo > .column2 {
+    background-color: red;
+}
+.gridTwo > .column3 {
+    background-color: yellow;
+}
