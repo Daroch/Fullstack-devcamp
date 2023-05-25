@@ -1,4 +1,5 @@
 .gridOne {
     display: grid;
-    grid-column: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    background-color: #F7F7F7
 }
