@@ -47,3 +47,19 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+.gridFive {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background-color: green;
+    width: 500px;
+}
+.gridFive  > #myid5 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.gridFive  > #myid5 img {
+    width:200px;
+    height:200px;
+    object-fit: cover;
+}
