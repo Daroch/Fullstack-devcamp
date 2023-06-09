@@ -14,3 +14,11 @@
 .flexOne .square {
     margin:  5px;
 }
+
+
+.flexTwo {
+    flex-direction: column;
+}
+.flexTwo .square {
+    margin:  2px;
+}
