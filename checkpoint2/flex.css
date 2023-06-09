@@ -30,3 +30,13 @@
 .flexThree .square {
     margin:  2px;
 }
+
+
+.flexFour {
+    width: 350px;
+    flex-wrap: wrap;
+}
+.flexFour .square {
+    margin:  5px;
+    background-color: #3d8b6d;
+}
