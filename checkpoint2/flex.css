@@ -75,3 +75,29 @@
     display: flex;
     justify-content:space-evenly;
 }
+
+
+.flexSeven {
+    height: 400px;
+    width: 500px;
+    background-color: #f1f1f1;
+    justify-content: space-between;
+}
+.flexSeven .one, .flexSeven .two, .flexSeven .three, .flexSeven .four {
+    display: flex;
+    flex-direction: column;
+}
+.flexSeven .one {
+    justify-content: center;
+}
+.flexSeven .two {
+    justify-content: flex-end;
+    background-color: #d6d6d6;
+}
+.flexSeven .three {
+    justify-content: flex-start;
+}
+.flexSeven .four {
+    justify-content: space-between;
+    background-color: #d6d6d6;
+}
