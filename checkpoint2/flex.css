@@ -6,4 +6,11 @@
 
 .flex {
     margin: 10px;
+    display: flex;
+}
+
+
+
+.flexOne .square {
+    margin:  5px;
 }
