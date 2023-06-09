@@ -54,3 +54,24 @@
 .flexFive #grow {
     flex-grow: 2;
 }
+
+.flexSix {
+    height: 400px;
+    width: 500px;
+    background-color: #f1f1f1;
+    flex-direction:column;
+    justify-content: space-between;
+}
+.flexSix .one {
+    display: flex;
+    justify-content: space-around;
+}
+.flexSix .two {
+    display: flex;
+    justify-content:space-between;
+    background-color: #d6d6d6;
+}
+.flexSix .three {
+    display: flex;
+    justify-content:space-evenly;
+}
