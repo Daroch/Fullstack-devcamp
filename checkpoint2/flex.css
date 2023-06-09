@@ -40,3 +40,17 @@
     margin:  5px;
     background-color: #3d8b6d;
 }
+
+
+.flexFive {
+    width: 350px;
+}
+.flexFive .item {
+    background-color: #0b6643;
+    width: 100px;
+    height: 100px;
+    margin: 2px;
+}
+.flexFive #grow {
+    flex-grow: 2;
+}
