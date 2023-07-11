@@ -1,6 +1,6 @@
 # Task 1
 
-Imagen lowframe fidelity
+[Imagen lowframe fidelity](lowframe_fidelity.jpg)
 
 
 
