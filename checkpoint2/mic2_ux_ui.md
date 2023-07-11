@@ -1,7 +1,9 @@
 # Task 1
-https://github.com/Daroch/Coding-Foundation-Proyect
 
----
+Imagen lowframe fidelity
+
+
+
 # Task 2
 Primary colors of https://jonny.me/ 
 
@@ -23,16 +25,45 @@ blue-violet:
 ---
 
 # Task 3
-User storie of Youtube:
+Ejemplo caso de uso en Youtube
 
-A Youtube user who has subscribe to Youtube channel wants to unsubscribe
-- Motivation: the users has not interested any more to one channel wich is subscribed, or he subscribe by mistake, or perhaps he is subscribed to a lot of channels and he wants to clean his profile.
-- Prechecks:
-  - The YouTube channel homepage show a button to unsubscribe if the user is subscribed.
-  - If the user clicks in the button, shown and alert to confirm and request  feedback with the reason to the users.
- - If the user confirms, then the unsubscribe action is done and Update statistics total suscriptions), send emails to user and Youtube channel with the feedback.
+Identificador: 1
+
+Nombre caso de uso: Desuscripción
+
+Actores:    Usuario
+            Sistema
+
+Propósito:  Desuscribir de un canal a un usuario.
+
+Descripción: Mostrar al usuario un botón para que al pulsarlo le permita darse de baja del canal. 
+
+Precondiciones: El usuario debe estar suscrito al canal.
+
+Postcondiciones: El usuario ya no estará suscripto al canal
+
+Flujo:  - El usuario visita un canal de Youtube
+        - El sistema verifica si el usuario está suscripto a dicho canal
+        - El sistema muestra en pantalla el botón de desuscripción al usuario
+        - El usuario hace click en el botón
+        - El sistema solicita confirmacion
+        - El usuario confirma
+        - El sistema desuscribe al usuario del canal
+
+
 ---
 # Task 4
-Identify the prime objective of Facebook, Twitter, Google, and Youtube.
-Their primary object is grow in number of users in the time,, and want get so much information as posible about users to offers new service to retain them in his platform
-and to expand their net based in relations between users
+Objetivos primarios de:
+
+## Facebook
+Conectar a personas en lugares distantes del mundo.
+
+## Twitter
+"Happening now". 
+Ofrecer información de los temas más actuales (seguir a personas influyentes)
+
+## Google
+"Nuestra misión es organizar la información del mundo y hacer que sea útil y accesible para todos."
+
+## Youtube.
+"Our mission is to give everyone a voice and show them the world. We believe that everyone deserves to have a voice, and that the world is a better place when we listen, share and build community through our stories."
