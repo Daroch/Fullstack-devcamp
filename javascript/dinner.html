@@ -10,7 +10,7 @@
     Please, open de inspector console to view and select your Menu.<br>Thanks!! 
 </body>
 <script>
-//import * from 'lodash';
+
 const menuTypes = ['breakfast, lunch, dinner'];
 const entreeDishes = [
     {id: 1, name: 'ensalada', price: 3.50},
@@ -40,14 +40,23 @@ const breakfastSidesDishes= [
     {id: 9, name: 'Fruits', price: 2.50},
 ];
 
-//Show Dishes
-//@params menu (array)
+/**
+ * Prints in the console a Menu with dishes and prices
+ * 
+ * @param {Object} menu
+ * @param {number} discountPrice
+ * 
+ * @returns {string} complete menu
+ */
 
 function showDishes(menu, discountPrice=0) {
     for(item of menu) {
         console.log(`${item.id}-${item.name}:\t ${item.price*(100-discountPrice)/100}€\n`);
     }
 }
+
+
+
 //Show option breakfast/lunch/dinner
 console.log("BOTTEGA RESTAURANT");
 let total = 0;
@@ -96,9 +105,15 @@ else{
 }
 } while(choiceMenuType === undefined);
 
-//user choices
-let firstChoice, secondChoice, thirdChoice;
 
+/**
+ * Prints in the console the dish choiced by the user and its price
+ * 
+ * @param {Object} menu
+ * @param {string} type
+ * 
+ * @returns {string} dish and price of choice
+ */
 function selectDish(menu, type=''){
     do {
         choice = prompt(`Please, select the number of your ${type}:`);
