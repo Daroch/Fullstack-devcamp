@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bottega Dinners Menu</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
 </head>
 <body>
     Please, open de inspector console to view and select your Menu.<br>Thanks!! 
 </body>
 <script>
+//import * from 'lodash';
 const menuTypes = ['breakfast, lunch, dinner'];
 const entreeDishes = [
     {id: 1, name: 'ensalada', price: 3.50},
@@ -17,25 +19,26 @@ const entreeDishes = [
     {id: 4, name: 'Pollo asado', price: 15},
     {id: 5, name: 'Rodaballo', price: 18},
     {id: 6, name: 'Trucha', price: 10},
-]
+];
 const sidesDishses = [
     {id: 7, name: 'patatas fritas', price: 3},
     {id: 8, name: 'croquetas', price: 6},
     {id: 9, name: 'esparragos en salsa', price: 6},
     {id: 10, name: 'choripan', price: 4},
-]
+];
 const breakfastEntreeDishes= [
     {id: 1, name: 'Croissants', price: 3},
     {id: 2, name: 'Eggs with Bacon', price: 5},
     {id: 3, name: 'Donuts', price: 3},
     {id: 4, name: 'Sandwich', price: 4.50},
-]
+];
 const breakfastSidesDishes= [
     {id: 5, name: 'Orage juice', price: 2.90},
     {id: 6, name: 'Coffe with milk', price: 1.80},
     {id: 7, name: 'Capuccino', price: 2.10},
     {id: 8, name: 'Chocolate', price: 2.10},
-]
+    {id: 9, name: 'Fruits', price: 2.50},
+];
 
 //Show Dishes
 //@params menu (array)
@@ -45,30 +48,37 @@ function showDishes(menu, discountPrice=0) {
         console.log(`${item.id}-${item.name}:\t ${item.price*(100-discountPrice)/100}€\n`);
     }
 }
-//mostrar opcion desayuno/comida/cena
+//Show option breakfast/lunch/dinner
 console.log("BOTTEGA RESTAURANT");
 let total = 0;
-let choiceType;
+let choiceMenuType;
 do {
-    choiceType = prompt('Welcome to Bottega Restaurant\n \
+    choiceMenuType = prompt('Welcome to Bottega Restaurant\n \
 What do yo want today?:\n \
 1 - Breakfast\n \
 2 - Lunch\n \
 3 - Dinner\n');
-if (choiceType==1) {//breakfast
+if (choiceMenuType==1) { //breakfast
     console.log('BREAKFAST MENU \n');
     console.log('ENTREES \n');
     showDishes(breakfastEntreeDishes);
     console.log('\nSIDES\n');
     showDishes(breakfastSidesDishes);
-}else if(choiceType==2){//lunch
+    selectDish(breakfastEntreeDishes,'entree');
+    selectDish(breakfastSidesDishes,'first side');
+    selectDish(breakfastSidesDishes,'second side');
+}
+else if(choiceMenuType==2){ //lunch
     console.log('LUNCH MENU \n');
     console.log('ENTREES \n');
     showDishes(entreeDishes,20);//lunch prices are 20% cheaper than dinner prices
     console.log('\nSIDES\n');
     showDishes(sidesDishses,20);//lunch prices are 20% cheaper than dinner prices
+    selectDish(entreeDishes,'entree');
+    selectDish(sidesDishses,'first side');
+    selectDish(sidesDishses,'second side');
 }
-else if(choiceType==3){//dinner
+else if(choiceMenuType==3){//dinner
     console.log('DINNER MENU \n');
     console.log('ENTREES \n');
     showDishes(entreeDishes);
@@ -78,12 +88,13 @@ else if(choiceType==3){//dinner
     selectDish(sidesDishses,'first side');
     selectDish(sidesDishses,'second side');
 
-}else{
-    choiceType = undefined;
+}
+else{
+    choiceMenuType = undefined;
     console.log("\nIncorrect option.\n");
 
 }
-} while(choiceType === undefined);
+} while(choiceMenuType === undefined);
 
 //user choices
 let firstChoice, secondChoice, thirdChoice;
@@ -91,19 +102,19 @@ let firstChoice, secondChoice, thirdChoice;
 function selectDish(menu, type=''){
     do {
         choice = prompt(`Please, select the number of your ${type}:`);
-
-        //TODO error con los ids, importar lodash y buscar el choice en los ids del menu
-        if(!isNaN(choice) && choice != null && choice != "" && choice < menu.length && choice >0){
-            console.log(`You have selected your ${type}: "${menu[choice-1].name}", its price is ${menu[choice-1].price}€`);
-            total += menu[choice-1].price;
+        const item = _.filter(menu, (item) => item.id === _.toNumber(choice));
+        let valid_option = _.includes(_.map(menu, 'id'), _.toNumber(choice));
+        if( valid_option ){
+            console.log(`You have selected your ${type}: "${item[0].name}", its price is ${item[0].price}€`);
+            total += item[0].price;
         }else{
             choice = undefined;
-            console.log("\nIncorrect option.\n");
+            console.log(`\nIncorrect option, select a valid number of ${type}\n`);
         }
     } while(choice === undefined);
 }
 
-console.log(`Your Total  = ${total}`);
+console.log(`Your Total  = ${total.toFixed(2)}€`);
 
 
 </script>
